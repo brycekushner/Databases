@@ -1,4 +1,5 @@
 <html>
+<?php include('header.php'); ?>
 <body>
 <h1>Equine Database Login</h1>
 
@@ -13,7 +14,8 @@
 <input type="password" name="password" placeholder="Password"><br> 
 <input type="submit" value="Login" name="login">
 <input type="submit" value="Register" name="register">
-</form> 
+</form>
+
 
 </body>
 </html>

@@ -9,17 +9,18 @@
 	$registerCheck = true;
 	$loginOnly = true;
 	// Connects to SQL database
-	$host = 'localhost';//enter hostname
-	$userName = 'root';//enter user name of DB
+	$host = 'localhost'; //enter hostname
+	$userName = 'root'; //enter user name of DB
 	$Pass = 'pwd'; //enter password
 	$DB = 'equine'; //Enter database name
 	$mysqli = mysqli_connect($host, $userName,$Pass,$DB);
 
 	if(!$mysqli){
-		echo "Dead Connection";
+		echo "Dead Connection: ".mysqli_connect_error();
 	}
 		
-	if($_POST["login"]){
+	else{
+		if($_POST["login"]){
 		$registerCheck = false;
 		$checkName = "SELECT userid,password FROM Login WHERE userid='$user' AND password='$pass'";
 		$sqlNameCheck = mysqli_query($mysqli, $checkName);
@@ -53,8 +54,10 @@
 			<br> 
 		<?php } elseif(!$loginOnly) { ?>
 			<p>Username already exists.</p>
-		<?php } ?>
-			<a href="/homepage.php">Go Back</a>
+		<?php } 
+		include('footer.php'); 
+	} ?>
+			<a href="/Databases/homepage.php">Go Back</a>
 </body>
 </html>
 
