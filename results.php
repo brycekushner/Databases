@@ -5,7 +5,7 @@
 <?php
         // Gets user input
         $name = $_POST["horse_name_forelimb"];
-        $date = $_POST["euthanasia_date+forelimb"];
+        $date = $_POST["euthanasia_date_forelimb"];
         $caseNo = $_POST["case_number_forelimb"];
         $rrCaseNo = $_POST["rr_case_number_forelimb"];
         $leg = $_POST["left_right_forelimb"];
