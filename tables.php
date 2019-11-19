@@ -11,10 +11,11 @@ $host = "localhost";
 $dbname= "equine";
 $username  = "root";
 $password = "pwd";
+$dsn = "mysql:host=$host;dbname=$dbname";
   try  {
-    $connection = new PDO($dsn, $username, $password, $options);
+    $connection = new PDO("mysql:host=$host", $username, $password);
     $sql = "SELECT * 
-            FROM Horse";
+            FROM Forelimb";
     $statement = $connection->prepare($sql);
     $statement->execute();
     $result = $statement->fetchAll();
