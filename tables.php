@@ -11,10 +11,11 @@ $host = "localhost";
 $dbname= "equine";
 $username  = "root";
 $password = "pwd";
+$dsn = "MySQL:host=$host;dbname=$dbname";
   try  {
-    $connection = new PDO($dsn, $username, $password, $options);
+    $connection = new PDO($dsn, $username, $password);
     $sql = "SELECT * 
-            FROM Horse";
+            FROM Forelimb";
     $statement = $connection->prepare($sql);
     $statement->execute();
     $result = $statement->fetchAll();
@@ -30,38 +31,31 @@ $password = "pwd";
     <table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Date of Birth</th>
-          <th>Breed</th>
-          <th>Gender</th>
           <th>VDL</th>
           <th>ROOD</th>
-          <th>Outside</th>
-          <th>Race Train</th>
+          <th>Leg</th>
+          <th>norm</th>
+          <th>doe</th>
         </tr>
       </thead>
       <tbody>
       <?php foreach ($result as $row) : ?>
         <tr>
-          <td><?php echo escape($row["name"]); ?></td>
-          <td><?php echo escape($row["dob"]); ?></td>
-          <td><?php echo escape($row["breed"]); ?></td>
-          <td><?php echo escape($row["gender"]); ?></td>
           <td><?php echo escape($row["vdl"]); ?></td>
           <td><?php echo escape($row["rood"]); ?></td>
-          <td><?php echo escape($row["outside"]); ?> </td>
-          <td><?php echo escape($row["racetrain"]); ?> </td>
+          <td><?php echo escape($row["leg"]); ?></td>
+          <td><?php echo escape($row["norm"]); ?></td>
+          <td><?php echo escape($row["doe"]); ?></td>
         </tr>
       <?php endforeach; ?>
       </tbody>
     </table>
     <?php } else { ?>
       <blockquote>No results found
-    <?php } 
-} ?> 
+    <?php } ?> 
 
 <h2>Find user based on location</h2>
 
 <a href="index.php">Back to home</a>
 
-<?php require "templates/footer.php"; ?>
+<?php require "footer.php"; ?>
