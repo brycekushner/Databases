@@ -57,7 +57,7 @@
 		<?php } 
 		include('footer.php'); 
 	} ?>
-			<a href="/Databases/homepage.php">Go Back</a>
+			<a href="/Databases/index.php">Go Back</a>
 </body>
 </html>
 
