@@ -23,7 +23,7 @@
         }
         else{
                 $sql = "INSERT INTO Forelimb (vdl,rood,leg,norm,doe,name) VALUES ('$caseNo', '$rrCaseNo', '$leg', '$phantom', '$date', '$name')";
-                if(!(mysqli_query($mysqli, $sql)){
+                if(!(mysqli_query($mysqli, $sql))){
                         echo "Error: ". $sql . "<br>" . mysqli_error($mysqli);
                 }
         }
