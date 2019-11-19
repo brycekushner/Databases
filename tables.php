@@ -7,27 +7,19 @@
  * a parameter: in this case, location.
  *
  */
-$host = "localhost";
-$dbname= "equine";
-$username  = "root";
-$password = "pwd";
-$dsn = "MySQL:host=$host;dbname=$dbname";
-  try  {
-    $connection = new PDO($dsn, $username, $password);
-    $sql = "SELECT * 
+$host = 'localhost';
+$userName = 'root';
+$password = "";
+$DB = 'equine';
+$sql = "SELECT * 
             FROM Forelimb";
-    $statement = $connection->prepare($sql);
-    $statement->execute();
-    $result = $statement->fetchAll();
-  } catch(PDOException $error) {
-      echo $sql . "<br>" . $error->getMessage();
-  }
-
+$mysqli = mysqli_connect($host, $userName, $password, $DB);
+$query = mysqli_query($mysqli,$sql);
 ?>
 <?php
-  if ($result && $statement->rowCount() > 0) { ?>
+  if ($query->num_rows > 0) { ?>
     <h2>Results</h2>
-
+    <?php $rows = mysqli_fetch_all($query);?>
     <table>
       <thead>
         <tr>
@@ -39,13 +31,13 @@ $dsn = "MySQL:host=$host;dbname=$dbname";
         </tr>
       </thead>
       <tbody>
-      <?php foreach ($result as $row) : ?>
+      <?php foreach ($rows as $row) : ?>
         <tr>
-          <td><?php echo escape($row["vdl"]); ?></td>
-          <td><?php echo escape($row["rood"]); ?></td>
-          <td><?php echo escape($row["leg"]); ?></td>
-          <td><?php echo escape($row["norm"]); ?></td>
-          <td><?php echo escape($row["doe"]); ?></td>
+          <td><?php echo $row[0]; ?></td>
+          <td><?php echo $row[1]; ?></td>
+          <td><?php echo $row[2]; ?></td>
+          <td><?php echo $row[3]; ?></td>
+          <td><?php echo $row[4]; ?></td>
         </tr>
       <?php endforeach; ?>
       </tbody>
@@ -53,8 +45,6 @@ $dsn = "MySQL:host=$host;dbname=$dbname";
     <?php } else { ?>
       <blockquote>No results found
     <?php } ?> 
-
-<h2>Find user based on location</h2>
 
 <a href="index.php">Back to home</a>
 
