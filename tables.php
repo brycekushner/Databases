@@ -11,51 +11,30 @@ $host = "localhost";
 $dbname= "equine";
 $username  = "root";
 $password = "pwd";
-$dsn = "MySQL:host=$host;dbname=$dbname";
-  try  {
-    $connection = new PDO($dsn, $username, $password);
-    $sql = "SELECT * 
-            FROM Forelimb";
-    $statement = $connection->prepare($sql);
-    $statement->execute();
-    $result = $statement->fetchAll();
-  } catch(PDOException $error) {
-      echo $sql . "<br>" . $error->getMessage();
-  }
+$mysqli = mysqli_connect($host, $username, $password, $dbname);
 
+if(!$mysqli){
+	echo "Dead Connection: ".mysqli_connect_error();
+}
+else{
 ?>
+	<table width="700">
+		<thead>	
+			<tr>
+				<th>Name</th><th> UK Case Number</th><th><th>Riddle Equine Case Number</th><th>Leg</th><th>Density Normalization?</th><th>Date</th>
+			</tr>
+		</thead>
+	<tbody>
 <?php
-  if ($result && $statement->rowCount() > 0) { ?>
-    <h2>Results</h2>
-
-    <table>
-      <thead>
-        <tr>
-          <th>VDL</th>
-          <th>ROOD</th>
-          <th>Leg</th>
-          <th>norm</th>
-          <th>doe</th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php foreach ($result as $row) : ?>
-        <tr>
-          <td><?php echo escape($row["vdl"]); ?></td>
-          <td><?php echo escape($row["rood"]); ?></td>
-          <td><?php echo escape($row["leg"]); ?></td>
-          <td><?php echo escape($row["norm"]); ?></td>
-          <td><?php echo escape($row["doe"]); ?></td>
-        </tr>
-      <?php endforeach; ?>
-      </tbody>
-    </table>
-    <?php } else { ?>
-      <blockquote>No results found
-    <?php } ?> 
-
-<h2>Find user based on location</h2>
-
-<a href="index.php">Back to home</a>
-
-<?php require "footer.php"; ?>
+	$sql = "SELECT * FROM Forelimb";
+	$result = mysqli_query($mysqli, $sql);
+	while($row = mysqli_fetch_array($result)){
+		echo "<tr><td width=70>".$row['name']."</td><td width=70>".$row['vdl']."</td><td width=70>".$row['rood']."</td><td width=70>".$row['leg']."</td><td width=70>".$row['norm']."</td><td width=70>".$row['doe']."</td>";
+	}
+}
+?>	</tbody>
+	</table>
+<?php
+mysqli_close($mysqli);
+require "footer.php"; 
+?>
