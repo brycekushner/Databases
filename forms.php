@@ -43,106 +43,117 @@
 		<br>
 
 		<h3>Forelimb</h3>
+		<div class="container">
+			
+			<!-- Start Distal Radius -->
+			<div class="row">
+				<div class="col">
+					<label for="distal-radius">Distal Radius</label><br>
+					<select id="distal-radius" name="distal-radius">
+						<option value="Not-Assessed" selected>Not Assessed</option>
+						<option value="Fracture">Fracture</option>
+						<option value="Lysis">Lysis</option>
+						<option value="Sclerosis">Sclerosis</option>
+						<option value="Within-Normal-Limits">Within Normal Limits</option>
+					</select>
+				</div>
 
-		<div class="row">
-		<!-- Start Distal Radius -->
-		<div class="col-3">
-		<label for="distal-radius">Distal Radius</label><br>
-		<select id="distal-radius" name="distal-radius">
-			<option value="Not-Assessed" selected>Not Assessed</option>
-			<option value="Fracture">Fracture</option>
-			<option value="Lysis">Lysis</option>
-			<option value="Sclerosis">Sclerosis</option>
-			<option value="Within-Normal-Limits">Within Normal Limits</option>
-		</select>
-		</div>
+				<div class="col">
+					<label for="distal-dorsomedial">Distal Dorsomedial</label><br>
+					<select id="distal-dorsomedial" name="distal-dorsomedial">
+						<option value="Not-Assessed" selected>Not Assessed</option>
+						<option value="Fracture">Fracture</option>
+						<option value="Lysis">Lysis</option>
+						<option value="Sclerosis">Sclerosis</option>
+						<option value="Within-Normal-Limits">Within Normal Limits</option>
+					</select>
+				</div>
 
-		<div class="col-3">
-		<label for="distal-dorsomedial">Distal Dorsomedial</label><br>
-		<select id="distal-dorsomedial" name="distal-dorsomedial">
-			<option value="Not-Assessed" selected>Not Assessed</option>
-			<option value="Fracture">Fracture</option>
-			<option value="Lysis">Lysis</option>
-			<option value="Sclerosis">Sclerosis</option>
-			<option value="Within-Normal-Limits">Within Normal Limits</option>
-		</select>
-		</div>
+				<div class="col">
+					<label for="distal-dorsolateral">Distal Dorsolateral</label><br>
+					<select id="distal-dorsolateral" name="distal-dorsolateral">
+						<option value="Not-Assessed" selected>Not Assessed</option>
+						<option value="Fracture">Fracture</option>
+						<option value="Lysis">Lysis</option>
+						<option value="Sclerosis">Sclerosis</option>
+						<option value="Within-Normal-Limits">Within Normal Limits</option>
+					</select>
+				</div>
 
-		<div class="col-3">
-		<label for="distal-dorsolateral">Distal Dorsolateral</label><br>
-		<select id="distal-dorsolateral" name="distal-dorsolateral">
-			<option value="Not-Assessed" selected>Not Assessed</option>
-			<option value="Fracture">Fracture</option>
-			<option value="Lysis">Lysis</option>
-			<option value="Sclerosis">Sclerosis</option>
-			<option value="Within-Normal-Limits">Within Normal Limits</option>
-		</select>
-		</div>
+				<div class="col">
+					<label for="distal-palmar">Distal Palmar</label><br>
+					<select id="distal-palmar" name="distal-palmar">
+						<option value="Not-Assessed" selected>Not Assessed</option>
+						<option value="Fracture">Fracture</option>
+						<option value="Lysis">Lysis</option>
+						<option value="Sclerosis">Sclerosis</option>
+						<option value="Within-Normal-Limits">Within Normal Limits</option>
+					</select>
+				</div>
+			</div>
+			<!-- End Distal Radius -->
+			
 
-		<div class="col-3">
-		<label for="distal-palmar">Distal Palmar</label><br>
-		<select id="distal-palmar" name="distal-palmar">
-			<option value="Not-Assessed" selected>Not Assessed</option>
-			<option value="Fracture">Fracture</option>
-			<option value="Lysis">Lysis</option>
-			<option value="Sclerosis">Sclerosis</option>
-			<option value="Within-Normal-Limits">Within Normal Limits</option>
-		</select>
-		</div>
-		<!-- End Distal Radius -->
-		</div>
+		
+			<!-- Start Radiocarpal Bone -->
+			<div class="row">
+				<div class="col">
+					<label for="radiocarpal-bone">Radiocarpal Bone</label><br>
+					<select id="radiocarpal-bone" name="radiocarpal-bone">
+						<option value="Not-Assessed" selected>Not Assessed</option>
+						<option value="Fracture">Fracture</option>
+						<option value="Lysis">Lysis</option>
+						<option value="Sclerosis">Sclerosis</option>
+						<option value="Within-Normal-Limits">Within Normal Limits</option>
+					</select>
+				</div>
 
-		<!-- Start Radiocarpal Bone -->
-		<label for="radiocarpal-bone">Radiocarpal Bone</label><br>
-		<select id="radiocarpal-bone" name="radiocarpal-bone">
-			<option value="Not-Assessed" selected>Not Assessed</option>
-			<option value="Fracture">Fracture</option>
-			<option value="Lysis">Lysis</option>
-			<option value="Sclerosis">Sclerosis</option>
-			<option value="Within-Normal-Limits">Within Normal Limits</option>
-		</select>
-		<br><br>
+				<div class="col">
+					<label for="radiocarpal-proximal-medial">Radiocarpal Proximal Medial</label><br>
+					<select id="radiocarpal-proximal-medial" name="radiocarpal-bone-medial">
+						<option value="Not-Assessed" selected>Not Assessed</option>
+						<option value="Fracture">Fracture</option>
+						<option value="Lysis">Lysis</option>
+						<option value="Sclerosis">Sclerosis</option>
+						<option value="Within-Normal-Limits">Within Normal Limits</option>
+					</select>
+				</div>
 
-		<label for="radiocarpal-proximal-medial">Radiocarpal Proximal Medial</label><br>
-		<select id="radiocarpal-proximal-medial" name="radiocarpal-bone-medial">
-			<option value="Not-Assessed" selected>Not Assessed</option>
-			<option value="Fracture">Fracture</option>
-			<option value="Lysis">Lysis</option>
-			<option value="Sclerosis">Sclerosis</option>
-			<option value="Within-Normal-Limits">Within Normal Limits</option>
-		</select>
-		<br><br>
+				<div class="col">
+					<label for="radiocarpal-proximal-lateral">Radiocarpal Proximal Lateral</label><br>
+					<select id="radiocarpal-proximal-lateral" name="radiocarpal-proximal-lateral">
+						<option value="Not-Assessed" selected>Not Assessed</option>
+						<option value="Fracture">Fracture</option>
+						<option value="Lysis">Lysis</option>
+						<option value="Sclerosis">Sclerosis</option>
+						<option value="Within-Normal-Limits">Within Normal Limits</option>
+					</select>
+				</div>
+				
+				<div class="col">
+					<label for="radiocarpal-distal-medial">Radiocarpal Distal Medial</label><br>
+					<select id="radiocarpal-distal-medial" name="radiocarpal-distal-medial">
+						<option value="Not-Assessed" selected>Not Assessed</option>
+						<option value="Fracture">Fracture</option>
+						<option value="Lysis">Lysis</option>
+						<option value="Sclerosis">Sclerosis</option>
+						<option value="Within-Normal-Limits">Within Normal Limits</option>
+					</select>
+				</div>
 
-		<label for="radiocarpal-proximal-lateral">Radiocarpal Proximal Lateral</label><br>
-		<select id="radiocarpal-proximal-lateral" name="radiocarpal-proximal-lateral">
-			<option value="Not-Assessed" selected>Not Assessed</option>
-			<option value="Fracture">Fracture</option>
-			<option value="Lysis">Lysis</option>
-			<option value="Sclerosis">Sclerosis</option>
-			<option value="Within-Normal-Limits">Within Normal Limits</option>
-		</select>
-		<br><br>
-
-		<label for="radiocarpal-distal-medial">Radiocarpal Distal Medial</label><br>
-		<select id="radiocarpal-distal-medial" name="radiocarpal-distal-medial">
-			<option value="Not-Assessed" selected>Not Assessed</option>
-			<option value="Fracture">Fracture</option>
-			<option value="Lysis">Lysis</option>
-			<option value="Sclerosis">Sclerosis</option>
-			<option value="Within-Normal-Limits">Within Normal Limits</option>
-		</select>
-		<br><br>
-
-		<label for="radiocarpal-distal-lateral">Radiocarpal Distal Lateral</label><br>
-		<select id="radiocarpal-distal-lateral" name="radiocarpal-distal-lateral">
-			<option value="Not-Assessed" selected>Not Assessed</option>
-			<option value="Fracture">Fracture</option>
-			<option value="Lysis">Lysis</option>
-			<option value="Sclerosis">Sclerosis</option>
-			<option value="Within-Normal-Limits">Within Normal Limits</option>
-		</select>
-		<br><br>
-		<!-- End Radiocarpal Bone -->
+				<div class="col">
+					<label for="radiocarpal-distal-lateral">Radiocarpal Distal Lateral</label><br>
+					<select id="radiocarpal-distal-lateral" name="radiocarpal-distal-lateral">
+						<option value="Not-Assessed" selected>Not Assessed</option>
+						<option value="Fracture">Fracture</option>
+						<option value="Lysis">Lysis</option>
+						<option value="Sclerosis">Sclerosis</option>
+						<option value="Within-Normal-Limits">Within Normal Limits</option>
+					</select>
+				</div>
+			</div>
+			<!-- End Radiocarpal Bone -->
+			
 
 		<!-- Start Metacarpal 3 -->
 		<label for="metacarpal-3">Metacarpal 3</label><br>
@@ -377,6 +388,7 @@
 		</select>
 		<br><br>
 		<!-- End Medial Sesamoid -->
+		</div> <!-- /container -->
 
 		<input type="submit" value="Submit" name="submit_forelimb">
 	</form>
