@@ -32,7 +32,8 @@
 	<?php }	else { ?>
 		<h1>Equine Database</h1>
 		<hr>
-		<h3>Incorrect login.</h3> <?php }				
+		<h3>Incorrect login.</h3>
+		<a href="/index.php">Go Back</a> <?php }				
 	} elseif($_POST["register"]){
 		$loginOnly = false;
 		// Check if userid already exists
@@ -59,8 +60,9 @@
 		<?php } elseif(!$loginOnly) { ?>
 			<p>Username already exists.</p>
 		<?php } 
-		include('footer.php'); 
-	} ?>
+	} 
+	include('footer.php'); 
+	?>
 </body>
 </html>
 
