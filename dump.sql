@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.27, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.28, for Linux (x86_64)
 --
 -- Host: localhost    Database: equine
 -- ------------------------------------------------------
--- Server version	5.7.27-0ubuntu0.18.04.1
+-- Server version	5.7.28-0ubuntu0.18.04.4
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -34,8 +34,40 @@ CREATE TABLE `Forelimb` (
   `vdl` int(11) DEFAULT NULL,
   `rood` int(11) DEFAULT NULL,
   `leg` varchar(255) DEFAULT NULL,
-  `norm` tinyint(1) DEFAULT NULL,
-  `doe` date DEFAULT NULL
+  `norm` varchar(255) DEFAULT NULL,
+  `doe` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `distalradius` varchar(255) DEFAULT NULL,
+  `distalradiusdm` varchar(255) DEFAULT NULL,
+  `distalradiusdl` varchar(255) DEFAULT NULL,
+  `distalradiusp` varchar(255) DEFAULT NULL,
+  `radiocarpal` varchar(255) DEFAULT NULL,
+  `radiocarpalpm` varchar(255) DEFAULT NULL,
+  `radiocarpalpl` varchar(255) DEFAULT NULL,
+  `radiocarpaldm` varchar(255) DEFAULT NULL,
+  `radiocarpaldl` varchar(255) DEFAULT NULL,
+  `mcarpal3` varchar(255) DEFAULT NULL,
+  `mcarpal3p` varchar(255) DEFAULT NULL,
+  `mcarpal3pd` varchar(255) DEFAULT NULL,
+  `mcarpal3pp` varchar(255) DEFAULT NULL,
+  `mcarpal3dia` varchar(255) DEFAULT NULL,
+  `mcarpal3diad` varchar(255) DEFAULT NULL,
+  `mcarpal3diap` varchar(255) DEFAULT NULL,
+  `mcarpal3dis` varchar(255) DEFAULT NULL,
+  `mcarpal3disdm` varchar(255) DEFAULT NULL,
+  `mcarpal3disdl` varchar(255) DEFAULT NULL,
+  `mcarpal3disdsr` varchar(255) DEFAULT NULL,
+  `mcarpal3dispm` varchar(255) DEFAULT NULL,
+  `mcarpal3displ` varchar(255) DEFAULT NULL,
+  `mcarpal3dispsr` varchar(255) DEFAULT NULL,
+  `medialaa` varchar(255) DEFAULT NULL,
+  `medialana` varchar(255) DEFAULT NULL,
+  `medialma` varchar(255) DEFAULT NULL,
+  `medialmna` varchar(255) DEFAULT NULL,
+  `medialba` varchar(255) DEFAULT NULL,
+  `medialbna` varchar(255) DEFAULT NULL,
+  `medialaxa` varchar(255) DEFAULT NULL,
+  `medialaxana` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -45,6 +77,7 @@ CREATE TABLE `Forelimb` (
 
 LOCK TABLES `Forelimb` WRITE;
 /*!40000 ALTER TABLE `Forelimb` DISABLE KEYS */;
+INSERT INTO `Forelimb` VALUES (123,126,'left-forelimb','yes','1998-01-16','bryce','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed');
 /*!40000 ALTER TABLE `Forelimb` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,10 +91,41 @@ DROP TABLE IF EXISTS `Hindlimb`;
 CREATE TABLE `Hindlimb` (
   `vdl` int(11) DEFAULT NULL,
   `rood` int(11) DEFAULT NULL,
-  `legH` varchar(255) DEFAULT NULL,
-  `normH` tinyint(1) DEFAULT NULL,
-  `doe` int(11) DEFAULT NULL,
-  `featuresH` varchar(255) DEFAULT NULL
+  `leg` varchar(255) DEFAULT NULL,
+  `norm` varchar(255) DEFAULT NULL,
+  `doe` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `distaltibia` varchar(255) DEFAULT NULL,
+  `distaltibiadm` varchar(255) DEFAULT NULL,
+  `distaltibiadl` varchar(255) DEFAULT NULL,
+  `distaltibiatp` varchar(255) DEFAULT NULL,
+  `centraltarsal` varchar(255) DEFAULT NULL,
+  `centraltarsald` varchar(255) DEFAULT NULL,
+  `centraltarsalp` varchar(255) DEFAULT NULL,
+  `centraltarsalpr` varchar(255) DEFAULT NULL,
+  `centraltarsaldis` varchar(255) DEFAULT NULL,
+  `metatarsal3` varchar(255) DEFAULT NULL,
+  `metatarsal3p` varchar(255) DEFAULT NULL,
+  `metatarsal3pd` varchar(255) DEFAULT NULL,
+  `metatarsal3pp` varchar(255) DEFAULT NULL,
+  `metatarsal3dia` varchar(255) DEFAULT NULL,
+  `metatarsal3diad` varchar(255) DEFAULT NULL,
+  `metatarsal3diap` varchar(255) DEFAULT NULL,
+  `metatarsal3dis` varchar(255) DEFAULT NULL,
+  `metatarsal3disdm` varchar(255) DEFAULT NULL,
+  `metatarsal3disdl` varchar(255) DEFAULT NULL,
+  `metatarsal3disdsr` varchar(255) DEFAULT NULL,
+  `metatarsal3dispm` varchar(255) DEFAULT NULL,
+  `metatarsal3displ` varchar(255) DEFAULT NULL,
+  `metatarsal3dispsr` varchar(255) DEFAULT NULL,
+  `medialsesamoidaa` varchar(255) DEFAULT NULL,
+  `medialsesamoidana` varchar(255) DEFAULT NULL,
+  `medialsesamoidma` varchar(255) DEFAULT NULL,
+  `medialsesamoidmna` varchar(255) DEFAULT NULL,
+  `medialsesamoidba` varchar(255) DEFAULT NULL,
+  `medialsesamoidbna` varchar(255) DEFAULT NULL,
+  `medialsesamoidaxa` varchar(255) DEFAULT NULL,
+  `medialsesamoidaxana` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -135,4 +199,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-18 17:46:35
+-- Dump completed on 2019-12-09 21:56:29
