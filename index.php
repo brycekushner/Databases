@@ -1,5 +1,6 @@
 <html>
-<?php include('header.php'); ?>
+<h1>Equine Database Project</h1>
+<hr>
 <body>
 <h1>Equine Database Login</h1>
 

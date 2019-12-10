@@ -58,7 +58,6 @@
 		<?php } 
 		include('footer.php'); 
 	} ?>
-			<a href="/Databases/index.php">Go Back</a>
 </body>
 </html>
 
