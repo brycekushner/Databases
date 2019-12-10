@@ -6,7 +6,9 @@
 <?php
 	// Gets user input
 	$user = $_POST["username"];
+	$display_user = $user;
 	$pass = $_POST["password"];
+	$display_pass = $pass;
 	$registerCheck = true;
 	$loginOnly = true;
 	// Connects to SQL database
@@ -50,8 +52,8 @@
 		if($registerCheck){
 		?>
 			<h3>You have registered!</h3>
-			<p>Your username is: <?php echo $user; ?> </p>
-			<p>Your password is: <?php echo $pass; ?> </p>
+			<p>Your username is: <?php echo $display_user; ?> </p>
+			<p>Your password is: <?php echo $display_pass; ?> </p>
 			<br> 
 		<?php } elseif(!$loginOnly) { ?>
 			<p>Username already exists.</p>
