@@ -30,6 +30,13 @@ select{
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 576px){
+    .container{
+        max-width: 540px;
+    }
 }
 
 @media (min-width: 768px){
@@ -38,9 +45,9 @@ select{
     }
 }
 
-@media (min-width: 576px){
+@media (min-width: 769px){
     .container{
-        max-width: 540px;
+        max-width: 1800px;
     }
 }
 
