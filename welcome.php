@@ -1,7 +1,5 @@
 <html>
-<?php include('header.php'); ?>
 <body>
-<h1>Equine Database</h1>
 
 <?php
 	// Gets user input
@@ -29,9 +27,12 @@
 		$sqlNameCheck = mysqli_query($mysqli, $checkName);
 		if(mysqli_num_rows($sqlNameCheck)>=1){
 		?>
-			<h3>Congrats! You Logged in!</h3>
+		<?php include('header.php'); ?>
+		<h3>Congrats! You Logged in!</h3>
 	<?php }	else { ?>
-			<h3>Incorrect login.</h3> <?php }				
+		<h1>Equine Database</h1>
+		<hr>
+		<h3>Incorrect login.</h3> <?php }				
 	} elseif($_POST["register"]){
 		$loginOnly = false;
 		// Check if userid already exists
