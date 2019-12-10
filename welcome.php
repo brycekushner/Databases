@@ -1,4 +1,5 @@
 <html>
+<?php include('header.php'); ?>
 <body>
 <h1>Equine Database</h1>
 
