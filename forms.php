@@ -427,7 +427,7 @@
 
 <div id="Hindlimb" class="tabcontent">
 	<!-- START HINDLIMB FORM -->
- 	<h3>Forelimb Pathology Form</h3>
+ 	<h3>Hindlimb Pathology Form</h3>
 	<form action="results.php" method="post">
 		<label>Horse's name: </label>
 		<input type="text" name="horse_name_forelimb"><br>
