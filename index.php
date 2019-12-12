@@ -2,7 +2,7 @@
 <h1>Equine Database Project</h1>
 <hr>
 <body>
-<h1>Equine Database Login</h1>
+<h1>Login</h1>
 
 <strong>Welcome to the Equine Database login!</strong>
 

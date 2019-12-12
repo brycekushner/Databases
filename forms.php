@@ -439,33 +439,33 @@
 		<input type="text" name="rr_case_number_forelimb"><br>
 		<label>Leg Being Examined: </label>
 		<div>
-			<input type="radio" id="left_forelimb" name="left_right_forelimb" value="left-forelimb" checked>
-			<label for="left_forelimb">Left Forelimb</label>
+			<input type="radio" id="left_hindlimb" name="left_right_hindlimb" value="left-hindlimb" checked>
+			<label for="left_hindlimb">Left hindlimb</label>
 		</div>
 		<div>
-			<input type="radio" id="right_forelimb" name="left_right_forelimb" value="right-forelimb">
-			<label for="right_forelimb">Right Forelimb</label>
+			<input type="radio" id="right_hindlimb" name="left_right_hindlimb" value="right-hindlimb">
+			<label for="right_hindlimb">Right Hindlimb</label>
 		</div>
 		<br>
 		<label>Was the Phantom Density Nomalization Standard Included in the Scan?<label>
 		<div>
-			<input type="radio" id="PDN_Yes" name="PDN_forelimb" value="yes" checked>
+			<input type="radio" id="PDN_Yes" name="PDN_hindlimb" value="yes" checked>
 			<label for="PDN_Yes">Yes</label>
 		</div>
 		<div>
-			<input type="radio" id="PDM_No" name="PDN_forelimb" value="no">
+			<input type="radio" id="PDM_No" name="PDN_hindlimb" value="no">
 			<label for="PDN_No">No</label>
 		</div>
 		<br>
 
-		<h3>Forelimb</h3>
+		<h3>Hindlimb</h3>
 		<div class="container">
 			
-			<!-- Start Distal Radius -->
+			<!-- Start Distal Tibia -->
 			<div class="row">
 				<div class="col">
-					<label for="distal-radius">Distal Radius</label><br>
-					<select id="distal-radius" name="distal-radius">
+					<label for="distal-tibia">Distal Tibia</label><br>
+					<select id="distal-tibia" name="distal-tibia">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -475,8 +475,8 @@
 				</div>
 
 				<div class="col">
-					<label for="distal-dorsomedial">Distal Dorsomedial</label><br>
-					<select id="distal-dorsomedial" name="distal-dorsomedial">
+					<label for="distal-tibia-dorsomedial">Distal Tibia Dorsomedial</label><br>
+					<select id="distal-tibia-dorsomedial" name="distal-tibia-dorsomedial">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -486,8 +486,8 @@
 				</div>
 
 				<div class="col">
-					<label for="distal-dorsolateral">Distal Dorsolateral</label><br>
-					<select id="distal-dorsolateral" name="distal-dorsolateral">
+					<label for="distal-tibia-dorsolateral">Distal Tibia Dorsolateral</label><br>
+					<select id="distal-tibia-dorsolateral" name="distal-tibia-dorsolateral">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -497,8 +497,8 @@
 				</div>
 
 				<div class="col">
-					<label for="distal-palmar">Distal Palmar</label><br>
-					<select id="distal-palmar" name="distal-palmar">
+					<label for="distal-tibia-palmar">Distal Tibia Palmar</label><br>
+					<select id="distal-tibia-palmar" name="distal-tibia-palmar">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -507,13 +507,13 @@
 					</select>
 				</div>
 			</div>
-			<!-- End Distal Radius -->
+			<!-- End Distal Tibia -->
 			<hr>
-			<!-- Start Radiocarpal Bone -->
+			<!-- Start Central Tarsal -->
 			<div class="row">
 				<div class="col">
-					<label for="radiocarpal-bone">Radiocarpal Bone</label><br>
-					<select id="radiocarpal-bone" name="radiocarpal-bone">
+					<label for="central-tarsal">Central Tarsal</label><br>
+					<select id="central-tarsal" name="central-tarsal">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -523,8 +523,8 @@
 				</div>
 
 				<div class="col">
-					<label for="radiocarpal-proximal-medial">Radiocarpal Proximal Medial</label><br>
-					<select id="radiocarpal-proximal-medial" name="radiocarpal-bone-medial">
+					<label for="central-tarsal-dorsal">Central Tarsal Dorsal</label><br>
+					<select id="central-tarsal-dorsal" name="central-tarsal-dorsal">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -534,8 +534,8 @@
 				</div>
 
 				<div class="col">
-					<label for="radiocarpal-proximal-lateral">Radiocarpal Proximal Lateral</label><br>
-					<select id="radiocarpal-proximal-lateral" name="radiocarpal-proximal-lateral">
+					<label for="central-tarsal-plantar">Central Tarsal Plantar</label><br>
+					<select id="central-tarsal-plantar" name="central-tarsal-plantar">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -545,8 +545,8 @@
 				</div>
 				
 				<div class="col">
-					<label for="radiocarpal-distal-medial">Radiocarpal Distal Medial</label><br>
-					<select id="radiocarpal-distal-medial" name="radiocarpal-distal-medial">
+					<label for="central-tarsal-proximal">Central Tarsal Proximal</label><br>
+					<select id="central-tarsal-proximal" name="central-tarsal-proximal">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -556,8 +556,8 @@
 				</div>
 
 				<div class="col">
-					<label for="radiocarpal-distal-lateral">Radiocarpal Distal Lateral</label><br>
-					<select id="radiocarpal-distal-lateral" name="radiocarpal-distal-lateral">
+					<label for="central-tarsal-distal">Central Tarsal Distal</label><br>
+					<select id="central-tarsal-distal" name="central-tarsal-distal">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -566,13 +566,13 @@
 					</select>
 				</div>
 			</div>
-			<!-- End Radiocarpal Bone -->
+			<!-- End Central Tarsal -->
 			<hr>
-			<!-- Start Metacarpal 3 -->
+			<!-- Start Metatarsal 3 -->
 			<div class="row">
 				<div class="col">
-					<label for="metacarpal-3">Metacarpal 3</label><br>
-					<select id="metacarpal-3" name="metacarpal-3">
+					<label for="metatarsal-3">Metatarsal 3</label><br>
+					<select id="metatarsal-3" name="metatarsal-3">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -582,8 +582,8 @@
 				</div>
 
 				<div class="col">
-					<label for="metacarpal-3-proximal">Metacarpal 3 Proximal</label><br>
-					<select id="metacarpal-3-proximal" name="metacarpal-3-proximal">
+					<label for="metatarsal-3-proximal">Metatarsal 3 Proximal</label><br>
+					<select id="metatarsal-3-proximal" name="metatarsal-3-proximal">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -593,8 +593,8 @@
 				</div>
 
 				<div class="col">
-					<label for="metacarpal-3-proximal-dorsal">Metacarpal 3 Proximal Dorsal</label><br>
-					<select id="metacarpal-3-proximal-dorsal" name="metacarpal-3-proximal-dorsal">
+					<label for="metatarsal-3-proximal-dorsal">Metatarsal 3 Proximal Dorsal</label><br>
+					<select id="metatarsal-3-proximal-dorsal" name="metatarsal-3-proximal-dorsal">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -604,8 +604,8 @@
 				</div>
 
 				<div class="col">
-					<label for="metacarpal-3-proximal-palmar">Metacarpal 3 Proximal Palmar</label><br>
-					<select id="metacarpal-3-proximal-palmar" name="metacarpal-3-proximal-palmar">
+					<label for="metatarsal-3-proximal-palmar">Metatarsal 3 Proximal Palmar</label><br>
+					<select id="metatarsal-3-proximal-palmar" name="metatarsal-3-proximal-palmar">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -617,8 +617,8 @@
 
 			<div class="row">
 				<div class="col">
-					<label for="metacarpal-3-diaphysis">Metacarpal 3 Diaphysis</label><br>
-					<select id="metacarpal-3-diaphysis" name="metacarpal-3-diaphysis">
+					<label for="metatarsal-3-diaphysis">Metatarsal 3 Diaphysis</label><br>
+					<select id="metatarsal-3-diaphysis" name="metatarsal-3-diaphysis">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -628,8 +628,8 @@
 				</div>
 
 				<div class="col">
-					<label for="metacarpal-3-diaphysis-dorsal">Metacarpal 3 Diaphysis Dorsal</label><br>
-					<select id="metacarpal-3-diaphysis-dorsal" name="metacarpal-3-diaphysis-dorsal">
+					<label for="metatarsal-3-diaphysis-dorsal">Metatarsal 3 Diaphysis Dorsal</label><br>
+					<select id="metatarsal-3-diaphysis-dorsal" name="metatarsal-3-diaphysis-dorsal">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -639,8 +639,8 @@
 				</div>
 
 				<div class="col">
-					<label for="metacarpal-3-diaphysis-palmar">Metacarpal 3 Diaphysis Palmar</label><br>
-					<select id="metacarpal-3-diaphysis-palmar" name="metacarpal-3-diaphysis-palmar">
+					<label for="metatarsal-3-diaphysis-palmar">Metatarsal 3 Diaphysis Palmar</label><br>
+					<select id="metatarsal-3-diaphysis-palmar" name="metatarsal-3-diaphysis-palmar">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -652,8 +652,8 @@
 			
 			<div class="row">
 				<div class="col">
-					<label for="metacarpal-3-distal">Metacarpal 3 Distal</label><br>
-					<select id="metacarpal-3-distal" name="metacarpal-3-distal">
+					<label for="metatarsal-3-distal">Metatarsal 3 Distal</label><br>
+					<select id="metatarsal-3-distal" name="metatarsal-3-distal">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -663,8 +663,8 @@
 				</div>
 
 				<div class="col">
-					<label for="metacarpal-3-distal-dorsal-medial">Metacarpal 3 Distal Dorsal Medial</label><br>
-					<select id="metacarpal-3-distal-dorsal-medial" name="metacarpal-3-distal-dorsal-medial">
+					<label for="metatarsal-3-distal-dorsal-medial">Metatarsal 3 Distal Dorsal Medial</label><br>
+					<select id="metatarsal-3-distal-dorsal-medial" name="metatarsal-3-distal-dorsal-medial">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -674,8 +674,8 @@
 				</div>
 
 				<div class="col">
-					<label for="metacarpal-3-distal-dorsal-lateral">Metacarpal 3 Distal Dorsal Lateral</label><br>
-					<select id="metacarpal-3-distal-dorsal-lateral" name="metacarpal-3-distal-dorsal-lateral">
+					<label for="metatarsal-3-distal-dorsal-lateral">Metatarsal 3 Distal Dorsal Lateral</label><br>
+					<select id="metatarsal-3-distal-dorsal-lateral" name="metatarsal-3-distal-dorsal-lateral">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -685,8 +685,8 @@
 				</div>
 
 				<div class="col">
-					<label for="metacarpal-3-dorsal-sagittal-ridge">Metacarpal 3 Distal Dorsal Sagittal Ridge</label><br>
-					<select id="metacarpal-3-dorsal-sagittal-ridge" name="metacarpal-3-dorsal-sagittal-ridge">
+					<label for="metatarsal-3-dorsal-sagittal-ridge">Metatarsal 3 Distal Dorsal Sagittal Ridge</label><br>
+					<select id="metatarsal-3-dorsal-sagittal-ridge" name="metatarsal-3-dorsal-sagittal-ridge">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -696,8 +696,8 @@
 				</div>
 
 				<div class="col">
-					<label for="metacarpal-3-distal-palmar-medial">Metacarpal 3 Distal Palmar Medial</label><br>
-					<select id="metacarpal-3-distal-palmar-medial" name="metacarpal-3-distal-palmar-medial">
+					<label for="metatarsal-3-distal-palmar-medial">Metatarsal 3 Distal Palmar Medial</label><br>
+					<select id="metatarsal-3-distal-palmar-medial" name="metatarsal-3-distal-palmar-medial">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -707,8 +707,8 @@
 				</div>
 
 				<div class="col">
-					<label for="metacarpal-3-distal-palmar-lateral">Metacarpal 3 Distal Palmar Lateral</label><br>
-					<select id="metacarpal-3-distal-palmar-lateral" name="metacarpal-3-distal-palmar-lateral">
+					<label for="metatarsal-3-distal-palmar-lateral">Metatarsal 3 Distal Palmar Lateral</label><br>
+					<select id="metatarsal-3-distal-palmar-lateral" name="metatarsal-3-distal-palmar-lateral">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -718,8 +718,8 @@
 				</div>
 
 				<div class="col">
-					<label for="metacarpal-3-distal-palmar-sagittal-ridge">Metacarpal 3 Distal Palmar Sagittal Ridge</label><br>
-					<select id="metacarpal-3-distal-palmar-sagittal-ridge" name="metacarpal-3-distal-palmar-sagittal-ridge">
+					<label for="metatarsal-3-distal-palmar-sagittal-ridge">Metatarsal 3 Distal Palmar Sagittal Ridge</label><br>
+					<select id="metatarsal-3-distal-palmar-sagittal-ridge" name="metatarsal-3-distal-palmar-sagittal-ridge">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
@@ -728,7 +728,7 @@
 					</select>
 				</div>
 			</div>
-			<!-- End Metacarpal 3 -->
+			<!-- End Metatarsal 3 -->
 			<hr>
 			<!-- Start Medial Sesamoid -->
 			<div class="row">
