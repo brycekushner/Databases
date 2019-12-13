@@ -4,7 +4,7 @@
     $host = "localhost";
     $dbname= "equine";
     $username  = "root";
-    $password = "";
+    $password = "pwd";
     
     function printTable($query, $table_headers = NULL)
 {
