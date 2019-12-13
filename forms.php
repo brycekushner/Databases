@@ -430,13 +430,13 @@
  	<h3>Hindlimb Pathology Form</h3>
 	<form action="results.php" method="post">
 		<label>Horse's name: </label>
-		<input type="text" name="horse_name_forelimb"><br>
+		<input type="text" name="horse_name_hindlimb"><br>
 		<label>Date of Euthanasia or Antemortem Coputed Tomography (CT) Study: </label>
-		<input type="date" name="euthanasia_date_forelimb"><br>
+		<input type="date" name="euthanasia_date_hindlimb"><br>
 		<label>University of Kentucky Veterinary Diagnostic Laboratory Case Number: </label>
-		<input type="text" name="case_number_forelimb"><br>
+		<input type="text" name="case_number_hindlimb"><br>
 		<label>Rood &amp; Riddle Equine Hospital Case Number: </label>
-		<input type="text" name="rr_case_number_forelimb"><br>
+		<input type="text" name="rr_case_number_hindlimb"><br>
 		<label>Leg Being Examined: </label>
 		<div>
 			<input type="radio" id="left_hindlimb" name="left_right_hindlimb" value="left-hindlimb" checked>
