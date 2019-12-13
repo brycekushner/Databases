@@ -472,6 +472,7 @@
 
 <div id="Hindlimb" class="tabcontent">
 	<!-- START HINDLIMB FORM -->
+	<div class="container">
  	<h3>Hindlimb Pathology Form</h3>
 	<form action="results.php" method="post">
 		<label>Horse's name: </label>
@@ -503,9 +504,7 @@
 		</div>
 		<br>
 
-		<h3>Hindlimb</h3>
-		<div class="container">
-			
+		<h3>Hindlimb</h3>	
 			<!-- Start Distal Tibia -->
 			<div class="row">
 				<div class="col">

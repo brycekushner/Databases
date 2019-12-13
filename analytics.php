@@ -8,7 +8,7 @@
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Forelimb', 'Percentage'],
-                ['Left Forelimb', 1]
+                ['Left Forelimb', 1],
                 ['Right Forelimb', 2]
             ]);
             var options = {
