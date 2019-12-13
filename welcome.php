@@ -28,10 +28,10 @@
 				?>
 						<?php include('header.php'); ?>
 						<h3>Congrats! You Logged in!</h3>
-						<script>
-							setCookie('loggedIn','true');
-							getCookie('loggedIn');
-						</script>
+						<!-- <script>
+							//setCookie('loggedIn','true');
+							//getCookie('loggedIn');
+						</script> -->
 				<?php }	else { ?>
 						<h1>Equine Database</h1>
 						<hr>

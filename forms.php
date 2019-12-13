@@ -4,16 +4,63 @@
 <h1>Available Forms</h1>
 
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Forelimb')">Forelimb</button>
-  <button class="tablinks" onclick="openCity(event, 'Hindlimb')">Hindlimb</button>
+	<button class="tablinks" onclick="openCity(event, 'General')">New Horse</button>
+	<button class="tablinks" onclick="openCity(event, 'Forelimb')">Forelimb</button>
+	<button class="tablinks" onclick="openCity(event, 'Hindlimb')">Hindlimb</button>
 </div>
 
 <!-- Tab content -->
+<div id="General" class="tabcontent">
+	<!-- START GENERAL FORM -->
+	<div class="container">
+		<h3>General Horse Information Form</h3>
+		<form action="results.php" method="post">
+			<label>Horse's Name: </label>
+			<input type="text" name="horse_name_general"><br>
+			<label>Horse's Date of Birth: </label>
+			<input type="date" name="dob_general"><br>
+			<label>Horse's Breed: </label>
+			<input type="text" name="horse_breed_general"><br>
+			<label>Horse's Gender: </label>
+			<input type="text" name="horse_gender_general"><br>
+			<label>University of Kentucky Veterinary Diagnostic Laboratory Case Number: </label>
+			<input type="text" name="case_number_general"><br>
+			<label>Rood &amp; Riddle Equine Hospital Case Number: </label>
+			<input type="text" name="rr_case_number_general"><br>
+			<label>Was this horse ever in race training?<label>
+			<div>
+				<input type="radio" id="Racing_Yes" name="Racing_general" value="yes" checked>
+				<label for="Racing_Yes">Yes</label>
+			</div>
+			<div>
+				<input type="radio" id="Racing_No" name="Racing_general" value="no">
+				<label for="Racing_No">No</label>
+			</div>
+			<br>
+			<label>Did this horse ever in race outside of North America?<label>
+			<div>
+				<input type="radio" id="Outside_Yes" name="Outside_general" value="yes" checked>
+				<label for="Outside_Yes">Yes</label>
+			</div>
+			<div>
+				<input type="radio" id="Outside_No" name="Outside_general" value="no">
+				<label for="Outside_No">No</label>
+			</div>
+			<br>
+			<label>Horse's Age at First Race:</label>
+			<input type="text" name="horse_first_race_general"><br>
+
+			<input type="submit" value="Submit" name="submit_general">
+		</form>
+	</div> <!-- /container -->
+	<!-- END GENERAL FORM -->
+</div>
 <div id="Forelimb" class="tabcontent">
   	<!-- START FORELIMB FORM -->
+	<div class="container">
 	<h3>Forelimb Pathology Form</h3>
 	<form action="results.php" method="post">
-		<label>Horse's name: </label>
+		<label>Horse's Name: </label>
 		<input type="text" name="horse_name_forelimb"><br>
 		<label>Date of Euthanasia or Antemortem Coputed Tomography (CT) Study: </label>
 		<input type="date" name="euthanasia_date_forelimb"><br>
@@ -43,8 +90,6 @@
 		<br>
 
 		<h3>Forelimb</h3>
-		<div class="container">
-			
 			<!-- Start Distal Radius -->
 			<div class="row">
 				<div class="col">
@@ -440,7 +485,7 @@
 		<label>Leg Being Examined: </label>
 		<div>
 			<input type="radio" id="left_hindlimb" name="left_right_hindlimb" value="left-hindlimb" checked>
-			<label for="left_hindlimb">Left hindlimb</label>
+			<label for="left_hindlimb">Left Hindlimb</label>
 		</div>
 		<div>
 			<input type="radio" id="right_hindlimb" name="left_right_hindlimb" value="right-hindlimb">
