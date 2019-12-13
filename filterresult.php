@@ -74,15 +74,15 @@ $query = 'SELECT * FROM HorseView WHERE name IS NOT NULL';
 
 if (isset($_POST['name']) && trim($_POST['name']) !==""){
     $x = $_POST['name'];
-    $query = $query . " AND Horse.name='$x'";
+    $query = $query . " AND name='$x'";
 }
 if (isset($_POST['vdl']) && trim($_POST['vdl']) !==""){
     $x = $_POST['vdl'];
-    $query = $query . " AND Horse.vdl='$x'";
+    $query = $query . " AND vdl='$x'";
 }
 if (isset($_POST['rood']) && trim($_POST['rood']) !==""){
     $x = $_POST['rood'];
-    $query = $query . " AND Horse.rood='$x'";
+    $query = $query . " AND rood='$x'";
 }
 if ($_POST['filteron1'] !== '...' && $_POST['field1'] !== '...' && $_POST['comparison1'] !== '...' && $_POST['value1'] !== '...'){
     $table = $_POST['filteron1'];
