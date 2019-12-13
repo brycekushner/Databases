@@ -97,22 +97,24 @@
         if(!$mysqli){
                 echo "Dead Connection: ".mysqli_connect_error();
         }
-        else{
+	else{
+		if($_POST["submit_forelimb"]{
 		// Forelimb data entry
-		$sql = "INSERT INTO Forelimb (vdl,rood,leg,norm,doe,distalradius,distalradiusdm,distalradiusdl,distalradiusp,radiocarpal,radiocarpalpm,radiocarpalpl,radiocarpaldm,radiocarpaldl,mcarpal3,mcarpal3p,mcarpal3pd,mcarpal3pp,mcarpal3dia,mcarpal3diad,mcarpal3diap,mcarpal3dis,mcarpal3disdm,mcarpal3disdl,mcarpal3disdsr,mcarpal3dispm,mcarpal3displ,mcarpal3dispsr,medialaa,medialana,medialma,medialmna,medialba,medialbna,medialaxa,medialaxana) VALUES ('$caseNo', '$rrCaseNo', '$leg', '$phantom', '$date','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11','$a12','$a13','$a14','$a15','$a16','$a17','$a18','$a19','$a20','$a21','$a22','$a23','$a24','$a25','$a26','$a27','$a28','$a29','$a30','$a31')";
+			$sql = "INSERT INTO Forelimb (vdl,rood,leg,norm,doe,distalradius,distalradiusdm,distalradiusdl,distalradiusp,radiocarpal,radiocarpalpm,radiocarpalpl,radiocarpaldm,radiocarpaldl,mcarpal3,mcarpal3p,mcarpal3pd,mcarpal3pp,mcarpal3dia,mcarpal3diad,mcarpal3diap,mcarpal3dis,mcarpal3disdm,mcarpal3disdl,mcarpal3disdsr,mcarpal3dispm,mcarpal3displ,mcarpal3dispsr,medialaa,medialana,medialma,medialmna,medialba,medialbna,medialaxa,medialaxana) VALUES ('$caseNo', '$rrCaseNo', '$leg', '$phantom', '$date','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11','$a12','$a13','$a14','$a15','$a16','$a17','$a18','$a19','$a20','$a21','$a22','$a23','$a24','$a25','$a26','$a27','$a28','$a29','$a30','$a31')";
 		
-		if(!(mysqli_query($mysqli, $sql))){
-                        echo "Error: ". $sql . "<br>" . mysqli_error($mysqli);
+			if(!(mysqli_query($mysqli, $sql))){
+                        	echo "Error: ". $sql . "<br>" . mysqli_error($mysqli);
+			}		
 		}
-
+		else{
 		// Hindlimb data entry
-		$sql2 = "INSERT INTO Hindlimb (vdl,rood,leg,norm,doe,distaltibia,distaltibiadm,distaltibiadl, distaltibiatp,centraltarsal,centraltarsald,centraltarsalp,centraltarsalpr,centraltarsaldis,metatarsal3,metatarsal3p,metatarsal3pd,metatarsal3pp,metatarsal3dia,metatarsal3diad,metatarsal3diap,metatarsal3dis,metatarsal3disdm,metatarsal3disdl,metatarsal3disdsr,metatarsal3dispm,metatarsal3displ,metatarsal3displ,metatarsal3dispsr,medialsesamoidaa,medialsesamoidana,medialsesamoiddma,medialsesamoiddmna,medialsesamoiddba,medialsesamoiddbna,medialsesamoidaxa,medialsesamoidaxana,medialsesamoid) VALUES ('$hcase', '$hrrcase', '$hlr', '$hpdn', '$hdate','$h1','$h2','$h3','$h4','$h5','$h6','$h7','$h8','$h9','$h10','$h11','$h12','$h13','$h14','$h15','$h16','$h17','$h18','$h19','$h20','$h21','$h22','$h23','$h25','$h26','$h27','$h28','$h29','$h30','$h31','$h32','$h24')";
+			$sql2 = "INSERT INTO Hindlimb (vdl,rood,leg,norm,doe,distaltibia,distaltibiadm,distaltibiadl, distaltibiatp,centraltarsal,centraltarsald,centraltarsalp,centraltarsalpr,centraltarsaldis,metatarsal3,metatarsal3p,metatarsal3pd,metatarsal3pp,metatarsal3dia,metatarsal3diad,metatarsal3diap,metatarsal3dis,metatarsal3disdm,metatarsal3disdl,metatarsal3disdsr,metatarsal3dispm,metatarsal3displ,metatarsal3displ,metatarsal3dispsr,medialsesamoidaa,medialsesamoidana,medialsesamoiddma,medialsesamoiddmna,medialsesamoiddba,medialsesamoiddbna,medialsesamoidaxa,medialsesamoidaxana,medialsesamoid) VALUES ('$hcase', '$hrrcase', '$hlr', '$hpdn', '$hdate','$h1','$h2','$h3','$h4','$h5','$h6','$h7','$h8','$h9','$h10','$h11','$h12','$h13','$h14','$h15','$h16','$h17','$h18','$h19','$h20','$h21','$h22','$h23','$h25','$h26','$h27','$h28','$h29','$h30','$h31','$h32','$h24')";
 	}
 		
-		if(!(mysqli_query($mysqli, $sql2))){
-                        echo "Error: ". $sql2 . "<br>" . mysqli_error($mysqli);
-                }
-
+			if(!(mysqli_query($mysqli, $sql2))){
+                        	echo "Error: ". $sql2 . "<br>" . mysqli_error($mysqli);
+                	}
+		}	
 		
         mysqli_close($mysqli);
 ?>
