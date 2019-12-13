@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Demo</title>
+    <link rel="stylesheet" href="css/ex.css" type="text/css" />
+    <style type="text/css">
+        form.demoForm {
+            margin: 2em 0 3em;
+        }
+
+        form.demoForm select {
+            vertical-align: top;
+            margin-right: 1em;
+        }
+
+        select#choices {
+            min-width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Paired Select Lists</h1>
+
+    <form action="filterresult.php" method="post" id="demoForm" class="demoForm">
+        <input type="text" name="name"><br>
+        <label>Horse Name: </label>
+        <input type="text" name="vdl"><br>
+        <label>VDL: </label>
+        <input type="text" name="rood"><br>
+        <label>Rood &amp; Riddle: </label>
+        
+        <table>
+            <tr>
+                <th>Filter On</th>
+                <th>Field</th>
+                <th>Is/Isn't</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td><select name="filteron1">
+                        <option>...</option>
+                        <option value="Horse">Horse</option>
+                        <option value="Forelimb">Forelimb</option>
+                        <option value="Hindlimb">Hindlimb</option>
+                    </select></td>
+                <td><select name="field1" id="field1">
+                        <option>...</option>
+                    </select></td>
+                <td><select name="comparison1" id="comparison1">
+                        <option >...</option>
+                        <option value="=">is</option>
+                        <option value="!=">is not</option>
+                    </select></td>
+                <td><select name="value1" id="value1">
+                        <option>...</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><select name="filteron2">
+                        <option>...</option>
+                        <option value="Horse">Horse</option>
+                        <option value="Forelimb">Forelimb</option>
+                        <option value="Hindlimb">Hindlimb</option>
+                    </select></td>
+                <td><select name="field2" id="field2">
+                        <option>...</option>
+                    </select></td>
+                <td><select name="comparison2" id="comparison2">
+                        <option>...</option>
+                        <option value="=">is</option>
+                        <option value="!=">is not</option>
+                    </select></td>
+                <td><select name="value2" id="value2">
+                        <option>...</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td><select name="filteron3">
+                        <option>...</option>
+                        <option value="Horse">Horse</option>
+                        <option value="Forelimb">Forelimb</option>
+                        <option value="Hindlimb">Hindlimb</option>
+                    </select></td>
+                <td><select name="field3" id="field3">
+                        <option>...</option>
+                    </select></td>
+                <td><select name="comparison3" id="comparison3">
+                        <option>...</option>
+                        <option value="=">is</option>
+                        <option value="!=">is not</option>
+                    </select></td>
+                <td><select name="value3" id="value3">
+                        <option>...</option>
+                    </select></td>
+            </tr>
+        </table>
+        <p><input type="submit" value="Submit" /></p>
+
+    </form>
+
+
+    <script type="text/javascript">
+        /*
+        From JavaScript and Forms Tutorial at dyn-web.com
+        Find information and updates at http://www.dyn-web.com/tutorials/forms/
+        */
+
+        // removes all option elements in select list 
+        // removeGrp (optional) boolean to remove optgroups
+        function removeAllOptions(sel, removeGrp) {
+            var len, groups, par;
+            if (removeGrp) {
+                groups = sel.getElementsByTagName('optgroup');
+                len = groups.length;
+                for (var i = len; i; i--) {
+                    sel.removeChild(groups[i - 1]);
+                }
+            }
+
+            len = sel.options.length;
+            for (var i = len; i; i--) {
+                par = sel.options[i - 1].parentNode;
+                par.removeChild(sel.options[i - 1]);
+            }
+        }
+
+        function appendDataToSelect(sel, obj) {
+            var f = document.createDocumentFragment();
+            var labels = [], group, opts;
+
+            function addOptions(obj) {
+                var f = document.createDocumentFragment();
+                var o;
+
+                for (var i = 0, len = obj.text.length; i < len; i++) {
+                    o = document.createElement('option');
+                    o.appendChild(document.createTextNode(obj.text[i]));
+
+                    if (obj.value) {
+                        o.value = obj.value[i];
+                    }
+
+                    f.appendChild(o);
+                }
+                return f;
+            }
+
+            if (obj.text) {
+                opts = addOptions(obj);
+                f.appendChild(opts);
+            } else {
+                for (var prop in obj) {
+                    if (obj.hasOwnProperty(prop)) {
+                        labels.push(prop);
+                    }
+                }
+
+                for (var i = 0, len = labels.length; i < len; i++) {
+                    group = document.createElement('optgroup');
+                    group.label = labels[i];
+                    f.appendChild(group);
+                    opts = addOptions(obj[labels[i]]);
+                    group.appendChild(opts);
+                }
+            }
+            sel.appendChild(f);
+        }
+
+        // anonymous function assigned to onchange event of controlling select list
+        document.forms['demoForm'].elements['filteron1'].onchange = function (e) {
+            // name of associated select list
+            var relName = 'field1';
+
+            // reference to associated select list 
+            var relList = this.form.elements[relName];
+
+            // get data from object literal based on selection in controlling select list (this.value)
+            var obj = Select_List_Data[relName.slice(0,-1)][this.value];
+
+            // remove current option elements
+            removeAllOptions(relList, true);
+
+            // call function to add optgroup/option elements
+            // pass reference to associated select list and data for new options
+            appendDataToSelect(relList, obj);
+        };
+
+        document.forms['demoForm'].elements['field1'].onchange = function (e) {
+            // name of associated select list
+            var relName = 'value1';
+
+            // reference to associated select list 
+            var relList = this.form.elements[relName];
+
+            // get data from object literal based on selection in controlling select list (this.value)
+            var obj = Select_List_Data[relName.slice(0,-1)][this.value];
+
+            // remove current option elements
+            removeAllOptions(relList, true);
+
+            // call function to add optgroup/option elements
+            // pass reference to associated select list and data for new options
+            appendDataToSelect(relList, obj);
+        };
+
+        document.forms['demoForm'].elements['filteron2'].onchange = function (e) {
+            // name of associated select list
+            var relName = 'field2';
+
+            // reference to associated select list 
+            var relList = this.form.elements[relName];
+
+            // get data from object literal based on selection in controlling select list (this.value)
+            var obj = Select_List_Data[relName.slice(0,-1)][this.value];
+
+            // remove current option elements
+            removeAllOptions(relList, true);
+
+            // call function to add optgroup/option elements
+            // pass reference to associated select list and data for new options
+            appendDataToSelect(relList, obj);
+        };
+
+        document.forms['demoForm'].elements['field2'].onchange = function (e) {
+            // name of associated select list
+            var relName = 'value2';
+
+            // reference to associated select list 
+            var relList = this.form.elements[relName];
+
+            // get data from object literal based on selection in controlling select list (this.value)
+            var obj = Select_List_Data[relName.slice(0,-1)][this.value];
+
+            // remove current option elements
+            removeAllOptions(relList, true);
+
+            // call function to add optgroup/option elements
+            // pass reference to associated select list and data for new options
+            appendDataToSelect(relList, obj);
+        };
+        document.forms['demoForm'].elements['filteron3'].onchange = function (e) {
+            // name of associated select list
+            var relName = 'field3';
+
+            // reference to associated select list 
+            var relList = this.form.elements[relName];
+
+            // get data from object literal based on selection in controlling select list (this.value)
+            var obj = Select_List_Data[relName.slice(0,-1)][this.value];
+
+            // remove current option elements
+            removeAllOptions(relList, true);
+
+            // call function to add optgroup/option elements
+            // pass reference to associated select list and data for new options
+            appendDataToSelect(relList, obj);
+        };
+
+        document.forms['demoForm'].elements['field3'].onchange = function (e) {
+            // name of associated select list
+            var relName = 'value3';
+
+            // reference to associated select list 
+            var relList = this.form.elements[relName];
+
+            // get data from object literal based on selection in controlling select list (this.value)
+            var obj = Select_List_Data[relName.slice(0,-1)][this.value];
+
+            // remove current option elements
+            removeAllOptions(relList, true);
+
+            // call function to add optgroup/option elements
+            // pass reference to associated select list and data for new options
+            appendDataToSelect(relList, obj);
+        };
+
+        // object literal holds data for optgroup/option elements
+        var Select_List_Data = {
+
+            // name of associated select list
+            'field': {
+
+                // names match option values in controlling select list
+                Horse: {
+                    text: ['...','Breed', 'Gender', 'Raced Outside NA',
+                        'Race Train'],
+                    value: ['...','breed', 'gender', 'outside', 'firstrace', 'racetrain']
+                },
+                Hindlimb: {
+                    text: ['...','leg', 'norm', 'distaltibia', 'distaltibiadm', 'distaltibiadl', 'distaltibiatp', 'centraltarsal', 'centraltarsald', 'centraltarsalp', 'centraltarsalpr', 'centraltarsaldis', 'metatarsal3', 'metatarsal3p', 'metatarsal3pd', 'metatarsal3pp', 'metatarsal3dia', 'metatarsal3diad', 'metatarsal3diap', 'metatarsal3dis', 'metatarsal3disdm', 'metatarsal3disdl', 'metatarsal3disdsr', 'metatarsal3dispm', 'metatarsal3displ', 'metatarsal3dispsr', 'medialsesamoidaa', 'medialsesamoidana', 'medialsesamoidma', 'medialsesamoidmna', 'medialsesamoidba', 'medialsesamoidbna', 'medialsesamoidaxa', 'medialsesamoidaxana'],
+                    value: ['...','Hindlimbleg', 'Hindlimbnorm', 'distaltibia', 'distaltibiadm', 'distaltibiadl', 'distaltibiatp', 'centraltarsal', 'centraltarsald', 'centraltarsalp', 'centraltarsalpr', 'centraltarsaldis', 'metatarsal3', 'metatarsal3p', 'metatarsal3pd', 'metatarsal3pp', 'metatarsal3dia', 'metatarsal3diad', 'metatarsal3diap', 'metatarsal3dis', 'metatarsal3disdm', 'metatarsal3disdl', 'metatarsal3disdsr', 'metatarsal3dispm', 'metatarsal3displ', 'metatarsal3dispsr', 'medialsesamoidaa', 'medialsesamoidana', 'medialsesamoidma', 'medialsesamoidmna', 'medialsesamoidba', 'medialsesamoidbna', 'medialsesamoidaxa', 'medialsesamoidaxana']
+                },
+                Forelimb: {
+                    text: ['...','leg', 'norm', 'distalradius', 'distalradiusdm', 'distalradiusdl', 'distalradiusp', 'radiocarpal', 'radiocarpalpm', 'radiocarpalpl', 'radiocarpaldm', 'radiocarpaldl', 'mcarpal3', 'mcarpal3p', 'mcarpal3pd', 'mcarpal3pp', 'mcarpal3dia', 'mcarpal3diad', 'mcarpal3diap', 'mcarpal3dis', 'mcarpal3disdm', 'mcarpal3disdl', 'mcarpal3disdsr', 'mcarpal3dispm', 'mcarpal3displ', 'mcarpal3dispsr', 'medialaa', 'medialana', 'medialma', 'medialmna', 'medialba', 'medialbna', 'medialaxa', 'medialaxana'],
+                    value: ['...','Forelimbleg', 'Hindlimbnorm', 'distalradius', 'distalradiusdm', 'distalradiusdl', 'distalradiusp', 'radiocarpal', 'radiocarpalpm', 'radiocarpalpl', 'radiocarpaldm', 'radiocarpaldl', 'mcarpal3', 'mcarpal3p', 'mcarpal3pd', 'mcarpal3pp', 'mcarpal3dia', 'mcarpal3diad', 'mcarpal3diap', 'mcarpal3dis', 'mcarpal3disdm', 'mcarpal3disdl', 'mcarpal3disdsr', 'mcarpal3dispm', 'mcarpal3displ', 'mcarpal3dispsr', 'medialaa', 'medialana', 'medialma', 'medialmna', 'medialba', 'medialbna', 'medialaxa', 'medialaxana']
+                }
+            },
+            'value': {
+
+                // names match option values in controlling select list
+                breed: {
+                    text: ['Thoroughbred', 'Standardbred', 'Sprint Bred', 'Arabian'],
+                    value: ['Thoroughbred', 'Standardbred', 'Sprint Bred', 'Arabian']
+                },
+                gender: {
+                    text: ['Intact Male', 'Gelding', 'Female', 'Spayed Female'],
+                    value: ['Male', 'Gelding', 'Female', 'Spayed Female']
+                },
+                outside: {
+                    text: ['Yes', 'No'],
+                    value: ['yes', 'no']
+                },
+                racetrain: {
+                    text: ['Yes', 'No'],
+                    value: ['yes', 'no']
+                },
+                hindleg: {
+                    text: ['left_hindlimb', 'right_hindlimb']
+                },
+                norm: {
+                    text: ['yes', 'no']
+                },
+                distaltibia: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                distaltibiadm: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                distaltibiadl: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                distaltibiatp: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                centraltarsal: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                centraltarsald: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                centraltarsalp: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                centraltarsalpr: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                centraltarsaldis: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3p: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3pd: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3pp: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3dia: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3diad: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3diap: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3dis: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3disdm: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3disdl: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3disdsr: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3dispm: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3displ: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                metatarsal3dispsr: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialsesamoidaa: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialsesamoidana: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialsesamoidma: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialsesamoidmna: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialsesamoidba: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialsesamoidbna: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialsesamoidaxa: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialsesamoidaxana: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                foreleg: {
+                    text: ['left_forelimb', 'right_forelimb']
+                },
+                norm: {
+                    text: ['yes', 'no']
+                },
+                distalradius: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                distalradiusdm: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                distalradiusdl: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                distalradiusp: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                radiocarpal: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                radiocarpalpm: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                radiocarpalpl: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                radiocarpaldm: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                radiocarpaldl: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3p: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3pd: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3pp: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3dia: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3diad: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3diap: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3dis: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3disdm: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3disdl: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3disdsr: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3dispm: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3displ: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                mcarpal3dispsr: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialaa: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialana: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialma: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialmna: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialba: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialbna: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialaxa: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                },
+                medialaxana: {
+                    text: ['Not-Assessed', 'Fracture', 'Lysis', 'Sclerosis', 'Within-Normal-Limits']
+                }
+            },
+
+
+        };
+
+        // populate associated select list when page loads
+        window.onload = function () {
+            var form = document.forms['demoForm'];
+
+            // reference to controlling select list
+            var sel = form.elements['category'];
+            sel.selectedIndex = 0;
+
+            // name of associated select list
+            var relName = 'choices[]';
+            // reference to associated select list
+            var rel = form.elements[relName];
+
+            // get data for associated select list passing its name
+            // and value of selected in controlling select list
+            var data = Select_List_Data[relName][sel.value];
+
+            // add options to associated select list
+            appendDataToSelect(rel, data);
+        };
+
+    </script>
+
+    <p>Back to <a href="index.html">index</a> for more demos and information.</p>
+
+</body>
+
+</html>
