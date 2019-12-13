@@ -36,7 +36,6 @@ CREATE TABLE `Forelimb` (
   `leg` varchar(255) DEFAULT NULL,
   `norm` varchar(255) DEFAULT NULL,
   `doe` date DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
   `distalradius` varchar(255) DEFAULT NULL,
   `distalradiusdm` varchar(255) DEFAULT NULL,
   `distalradiusdl` varchar(255) DEFAULT NULL,
@@ -67,7 +66,8 @@ CREATE TABLE `Forelimb` (
   `medialba` varchar(255) DEFAULT NULL,
   `medialbna` varchar(255) DEFAULT NULL,
   `medialaxa` varchar(255) DEFAULT NULL,
-  `medialaxana` varchar(255) DEFAULT NULL
+  `medialaxana` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -77,7 +77,7 @@ CREATE TABLE `Forelimb` (
 
 LOCK TABLES `Forelimb` WRITE;
 /*!40000 ALTER TABLE `Forelimb` DISABLE KEYS */;
-INSERT INTO `Forelimb` VALUES (123,126,'left-forelimb','yes','1998-01-16','bryce','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed','','Not-Assessed','Not-Assessed','Not-Assessed','Not-Assessed');
+INSERT INTO `Forelimb` VALUES (1234,1234,'left-forelimb','no','2019-12-10','Fracture','Fracture','Not-Assessed','Not-Assessed','Within-Normal-Limits','','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Sclerosis','Within-Normal-Limits','','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Lysis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Kushner'),(9876,9876,'right-forelimb','yes','2019-12-08','Within-Normal-Limits','Lysis','Lysis','Within-Normal-Limits','Within-Normal-Limits','','Within-Normal-Limits','Within-Normal-Limits','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Sclerosis','Sclerosis','Sclerosis','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','','Lysis','Lysis','Lysis','Within-Normal-Limits','Lydon'),(1111,1111,'right-forelimb','yes','2019-12-02','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Sclerosis','','Sclerosis','Sclerosis','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','','Lysis','Lysis','Fracture','Fracture','Lysis','Within-Normal-Limits','Within-Normal-Limits','','Within-Normal-Limits','Fracture','Within-Normal-Limits','Within-Normal-Limits','Kushner'),(2222,2222,'left-forelimb','yes','2019-12-05','Within-Normal-Limits','Within-Normal-Limits','Lysis','Lysis','Within-Normal-Limits','','Within-Normal-Limits','Within-Normal-Limits','Fracture','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','','Within-Normal-Limits','Lysis','Lysis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Kimmerer');
 /*!40000 ALTER TABLE `Forelimb` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +94,6 @@ CREATE TABLE `Hindlimb` (
   `leg` varchar(255) DEFAULT NULL,
   `norm` varchar(255) DEFAULT NULL,
   `doe` date DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
   `distaltibia` varchar(255) DEFAULT NULL,
   `distaltibiadm` varchar(255) DEFAULT NULL,
   `distaltibiadl` varchar(255) DEFAULT NULL,
@@ -125,7 +124,9 @@ CREATE TABLE `Hindlimb` (
   `medialsesamoidba` varchar(255) DEFAULT NULL,
   `medialsesamoidbna` varchar(255) DEFAULT NULL,
   `medialsesamoidaxa` varchar(255) DEFAULT NULL,
-  `medialsesamoidaxana` varchar(255) DEFAULT NULL
+  `medialsesamoidaxana` varchar(255) DEFAULT NULL,
+  `medialsesamoid` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -135,6 +136,7 @@ CREATE TABLE `Hindlimb` (
 
 LOCK TABLES `Hindlimb` WRITE;
 /*!40000 ALTER TABLE `Hindlimb` DISABLE KEYS */;
+INSERT INTO `Hindlimb` VALUES (1234,1234,'left-hindlimb','no','2019-12-12','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Fracture','Fracture','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Lysis','Lysis','Lysis','Sclerosis','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Lysis','Within-Normal-Limits','Within-Normal-Limits','Lysis','Fracture','Kushner'),(9876,9876,'left-hindlimb','yes','2019-12-08','Fracture','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Sclerosis','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Lysis','Lysis','Within-Normal-Limits','Lysis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Sclerosis','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','Fracture','Lydon'),(1111,1111,'right-hindlimb','yes','2019-12-02','Sclerosis','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Fracture','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Fracture','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Lysis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Kushner'),(2222,2222,'left-hindlimb','yes','2019-12-04','Sclerosis','Sclerosis','Sclerosis','Sclerosis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Lysis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Lysis','Within-Normal-Limits','Within-Normal-Limits','Within-Normal-Limits','Fracture','Kimmerer');
 /*!40000 ALTER TABLE `Hindlimb` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,9 +154,9 @@ CREATE TABLE `Horse` (
   `gender` varchar(255) DEFAULT NULL,
   `vdl` int(11) DEFAULT NULL,
   `rood` int(11) DEFAULT NULL,
-  `outside` tinyint(1) DEFAULT NULL,
+  `outside` varchar(255) DEFAULT NULL,
   `firstrace` tinyint(1) DEFAULT NULL,
-  `racetrain` tinyint(1) DEFAULT NULL
+  `racetrain` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -164,6 +166,7 @@ CREATE TABLE `Horse` (
 
 LOCK TABLES `Horse` WRITE;
 /*!40000 ALTER TABLE `Horse` DISABLE KEYS */;
+INSERT INTO `Horse` VALUES ('Seabiscuit','2017-01-16','Thoroughbred','Male',1234,1234,'no',2,'yes'),('John Cena','2017-12-25','Arabian','Male',9876,9876,'yes',1,'yes'),('Lightning','2017-11-28','Quarter Horse','Male',1111,1111,'yes',2,'yes'),('Tom Brady','2018-01-30','Standardbred','Male',2222,2222,'no',0,'no');
 /*!40000 ALTER TABLE `Horse` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,4 +202,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-09 21:56:29
+-- Dump completed on 2019-12-12 23:43:08
