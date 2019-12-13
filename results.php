@@ -4,9 +4,16 @@
 
 <?php
     // Gets user input
-
 	if($_POST["submit_general"]){
-
+		$g_name = $_POST["horse_name_general"];
+		$dob = $_POST["horse_dob_general"];
+		$breed = $_POST["horse_breed_general"];
+		$gender = $_POST["horse_gender_general"];
+		$g_vdl = $_POST["case_number_general"];
+		$g_rr = $_POST["rr_case_number_general"];
+		$racing = $_POST["Racing_general"];
+		$outside = $_POST["Outside_general"];
+		$age = $_POST["horse_first_race_general"];
 	}elseif($_POST["submit_forelimb"]){
 		// Forelimb data
 		$date = $_POST["euthanasia_date_forelimb"];
@@ -101,7 +108,10 @@
 	} else {
 		if($_POST["submit_general"]){
 			// General data entry
-
+			$sql3 = "INSERT INTO Horse (name,dob,breed,gender,vdl,rood,outside,firstrace,racetrain) VALUES ('$g_name','$dob','$breed','$gender','$g_vdl','$g_rr','$outside','$age','$racing')";
+			if(!(mysqli_query($mysqli, $sql3))){
+				echo "Error: ". $sql3 . "<br>" . mysqli_error($mysqli);
+			}
 		}elseif($_POST["submit_forelimb"]){
 			// Forelimb data entry
 			$sql = "INSERT INTO Forelimb (vdl,rood,leg,norm,doe,distalradius,distalradiusdm,distalradiusdl,distalradiusp,radiocarpal,radiocarpalpm,radiocarpalpl,radiocarpaldm,radiocarpaldl,mcarpal3,mcarpal3p,mcarpal3pd,mcarpal3pp,mcarpal3dia,mcarpal3diad,mcarpal3diap,mcarpal3dis,mcarpal3disdm,mcarpal3disdl,mcarpal3disdsr,mcarpal3dispm,mcarpal3displ,mcarpal3dispsr,medialaa,medialana,medialma,medialmna,medialba,medialbna,medialaxa,medialaxana) VALUES ('$caseNo', '$rrCaseNo', '$leg', '$phantom', '$date','$a1','$a2','$a3','$a4','$a5','$a6','$a7','$a8','$a9','$a10','$a11','$a12','$a13','$a14','$a15','$a16','$a17','$a18','$a19','$a20','$a21','$a22','$a23','$a24','$a25','$a26','$a27','$a28','$a29','$a30','$a31')";

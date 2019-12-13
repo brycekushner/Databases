@@ -18,7 +18,7 @@
 			<label>Horse's Name: </label>
 			<input type="text" name="horse_name_general"><br>
 			<label>Horse's Date of Birth: </label>
-			<input type="date" name="dob_general"><br>
+			<input type="date" name="horse_dob_general"><br>
 			<label>Horse's Breed: </label>
 			<input type="text" name="horse_breed_general"><br>
 			<label>Horse's Gender: </label>
