@@ -23,6 +23,9 @@
   color: white;
 }
 </style>
+<h1>Equine Database</h1>
+	<hr>
+	<a href="forms.php">Forms</a> | <a href="tables.php">Archive</a> | <a href="analytics.php">Analytics</a> | <a href="filter.html">Filter</a>
 </head>
 <?php
 $host = "localhost";
