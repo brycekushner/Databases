@@ -153,7 +153,7 @@
 
 				<div class="col">
 					<label for="radiocarpal-proximal-medial">Radiocarpal Proximal Medial</label><br>
-					<select id="radiocarpal-proximal-medial" name="radiocarpal-bone-medial">
+					<select id="radiocarpal-proximal-medial" name="radiocarpal-proximal-medial">
 						<option value="Not-Assessed" selected>Not Assessed</option>
 						<option value="Fracture">Fracture</option>
 						<option value="Lysis">Lysis</option>
