@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-	<h1>Equine Database</h1>
-	<hr>
-	<a href="forms.php">Forms</a> | <a href="tables.php">Archive</a> | <a href="analytics.php">Analytics</a> | <a href="filter.html">Filter</a>
+    <h1>Equine Database</h1>
+    <hr>
+    <a href="forms.php">Forms</a> | <a href="tables.php">Archive</a> | <a href="analytics.php">Analytics</a> | <a
+        href="filter.html">Filter</a>
     <meta charset="utf-8" />
     <title>Demo</title>
     <link rel="stylesheet" href="css/ex.css" type="text/css" />
@@ -25,7 +26,7 @@
 </head>
 
 <body>
-    
+
     <h1>Filtering:</h1>
 
     <form action="filterresult.php" method="post" id="demoForm" class="demoForm">
@@ -35,7 +36,7 @@
         <input type="text" name="vdl"><br>
         <label>Rood &amp; Riddle: </label>
         <input type="text" name="rood"><br>
-        
+
         <table>
             <tr>
                 <th>Filter On</th>
@@ -54,7 +55,7 @@
                         <option>...</option>
                     </select></td>
                 <td><select name="comparison1" id="comparison1">
-                        <option >...</option>
+                        <option>...</option>
                         <option value="=">is</option>
                         <option value="!=">is not</option>
                     </select></td>
@@ -182,7 +183,7 @@
             var relList = this.form.elements[relName];
 
             // get data from object literal based on selection in controlling select list (this.value)
-            var obj = Select_List_Data[relName.slice(0,-1)][this.value];
+            var obj = Select_List_Data[relName.slice(0, -1)][this.value];
 
             // remove current option elements
             removeAllOptions(relList, true);
@@ -200,7 +201,7 @@
             var relList = this.form.elements[relName];
 
             // get data from object literal based on selection in controlling select list (this.value)
-            var obj = Select_List_Data[relName.slice(0,-1)][this.value];
+            var obj = Select_List_Data[relName.slice(0, -1)][this.value];
 
             // remove current option elements
             removeAllOptions(relList, true);
@@ -218,7 +219,7 @@
             var relList = this.form.elements[relName];
 
             // get data from object literal based on selection in controlling select list (this.value)
-            var obj = Select_List_Data[relName.slice(0,-1)][this.value];
+            var obj = Select_List_Data[relName.slice(0, -1)][this.value];
 
             // remove current option elements
             removeAllOptions(relList, true);
@@ -236,7 +237,7 @@
             var relList = this.form.elements[relName];
 
             // get data from object literal based on selection in controlling select list (this.value)
-            var obj = Select_List_Data[relName.slice(0,-1)][this.value];
+            var obj = Select_List_Data[relName.slice(0, -1)][this.value];
 
             // remove current option elements
             removeAllOptions(relList, true);
@@ -253,7 +254,7 @@
             var relList = this.form.elements[relName];
 
             // get data from object literal based on selection in controlling select list (this.value)
-            var obj = Select_List_Data[relName.slice(0,-1)][this.value];
+            var obj = Select_List_Data[relName.slice(0, -1)][this.value];
 
             // remove current option elements
             removeAllOptions(relList, true);
@@ -271,7 +272,7 @@
             var relList = this.form.elements[relName];
 
             // get data from object literal based on selection in controlling select list (this.value)
-            var obj = Select_List_Data[relName.slice(0,-1)][this.value];
+            var obj = Select_List_Data[relName.slice(0, -1)][this.value];
 
             // remove current option elements
             removeAllOptions(relList, true);
@@ -289,17 +290,17 @@
 
                 // names match option values in controlling select list
                 Horse: {
-                    text: ['...','Breed', 'Gender', 'Raced Outside NA',
+                    text: ['...', 'Breed', 'Gender', 'Raced Outside NA',
                         'Race Train'],
-                    value: ['...','breed', 'gender', 'outside', 'firstrace', 'racetrain']
+                    value: ['...', 'breed', 'gender', 'outside', 'firstrace', 'racetrain']
                 },
                 Hindlimb: {
-                    text: ['...','leg', 'norm', 'distaltibia', 'distaltibiadm', 'distaltibiadl', 'distaltibiatp', 'centraltarsal', 'centraltarsald', 'centraltarsalp', 'centraltarsalpr', 'centraltarsaldis', 'metatarsal3', 'metatarsal3p', 'metatarsal3pd', 'metatarsal3pp', 'metatarsal3dia', 'metatarsal3diad', 'metatarsal3diap', 'metatarsal3dis', 'metatarsal3disdm', 'metatarsal3disdl', 'metatarsal3disdsr', 'metatarsal3dispm', 'metatarsal3displ', 'metatarsal3dispsr', 'medialsesamoidaa', 'medialsesamoidana', 'medialsesamoidma', 'medialsesamoidmna', 'medialsesamoidba', 'medialsesamoidbna', 'medialsesamoidaxa', 'medialsesamoidaxana'],
-                    value: ['...','Hindlimbleg', 'Hindlimbnorm', 'distaltibia', 'distaltibiadm', 'distaltibiadl', 'distaltibiatp', 'centraltarsal', 'centraltarsald', 'centraltarsalp', 'centraltarsalpr', 'centraltarsaldis', 'metatarsal3', 'metatarsal3p', 'metatarsal3pd', 'metatarsal3pp', 'metatarsal3dia', 'metatarsal3diad', 'metatarsal3diap', 'metatarsal3dis', 'metatarsal3disdm', 'metatarsal3disdl', 'metatarsal3disdsr', 'metatarsal3dispm', 'metatarsal3displ', 'metatarsal3dispsr', 'medialsesamoidaa', 'medialsesamoidana', 'medialsesamoidma', 'medialsesamoidmna', 'medialsesamoidba', 'medialsesamoidbna', 'medialsesamoidaxa', 'medialsesamoidaxana']
+                    text: ['...', 'leg', 'norm', 'distaltibia', 'distaltibiadm', 'distaltibiadl', 'distaltibiatp', 'centraltarsal', 'centraltarsald', 'centraltarsalp', 'centraltarsalpr', 'centraltarsaldis', 'metatarsal3', 'metatarsal3p', 'metatarsal3pd', 'metatarsal3pp', 'metatarsal3dia', 'metatarsal3diad', 'metatarsal3diap', 'metatarsal3dis', 'metatarsal3disdm', 'metatarsal3disdl', 'metatarsal3disdsr', 'metatarsal3dispm', 'metatarsal3displ', 'metatarsal3dispsr', 'medialsesamoidaa', 'medialsesamoidana', 'medialsesamoidma', 'medialsesamoidmna', 'medialsesamoidba', 'medialsesamoidbna', 'medialsesamoidaxa', 'medialsesamoidaxana'],
+                    value: ['...', 'Hindlimbleg', 'Hindlimbnorm', 'distaltibia', 'distaltibiadm', 'distaltibiadl', 'distaltibiatp', 'centraltarsal', 'centraltarsald', 'centraltarsalp', 'centraltarsalpr', 'centraltarsaldis', 'metatarsal3', 'metatarsal3p', 'metatarsal3pd', 'metatarsal3pp', 'metatarsal3dia', 'metatarsal3diad', 'metatarsal3diap', 'metatarsal3dis', 'metatarsal3disdm', 'metatarsal3disdl', 'metatarsal3disdsr', 'metatarsal3dispm', 'metatarsal3displ', 'metatarsal3dispsr', 'medialsesamoidaa', 'medialsesamoidana', 'medialsesamoidma', 'medialsesamoidmna', 'medialsesamoidba', 'medialsesamoidbna', 'medialsesamoidaxa', 'medialsesamoidaxana']
                 },
                 Forelimb: {
-                    text: ['...','leg', 'norm', 'distalradius', 'distalradiusdm', 'distalradiusdl', 'distalradiusp', 'radiocarpal', 'radiocarpalpm', 'radiocarpalpl', 'radiocarpaldm', 'radiocarpaldl', 'mcarpal3', 'mcarpal3p', 'mcarpal3pd', 'mcarpal3pp', 'mcarpal3dia', 'mcarpal3diad', 'mcarpal3diap', 'mcarpal3dis', 'mcarpal3disdm', 'mcarpal3disdl', 'mcarpal3disdsr', 'mcarpal3dispm', 'mcarpal3displ', 'mcarpal3dispsr', 'medialaa', 'medialana', 'medialma', 'medialmna', 'medialba', 'medialbna', 'medialaxa', 'medialaxana'],
-                    value: ['...','Forelimbleg', 'Forelimbnorm', 'distalradius', 'distalradiusdm', 'distalradiusdl', 'distalradiusp', 'radiocarpal', 'radiocarpalpm', 'radiocarpalpl', 'radiocarpaldm', 'radiocarpaldl', 'mcarpal3', 'mcarpal3p', 'mcarpal3pd', 'mcarpal3pp', 'mcarpal3dia', 'mcarpal3diad', 'mcarpal3diap', 'mcarpal3dis', 'mcarpal3disdm', 'mcarpal3disdl', 'mcarpal3disdsr', 'mcarpal3dispm', 'mcarpal3displ', 'mcarpal3dispsr', 'medialaa', 'medialana', 'medialma', 'medialmna', 'medialba', 'medialbna', 'medialaxa', 'medialaxana']
+                    text: ['...', 'leg', 'norm', 'distalradius', 'distalradiusdm', 'distalradiusdl', 'distalradiusp', 'radiocarpal', 'radiocarpalpm', 'radiocarpalpl', 'radiocarpaldm', 'radiocarpaldl', 'mcarpal3', 'mcarpal3p', 'mcarpal3pd', 'mcarpal3pp', 'mcarpal3dia', 'mcarpal3diad', 'mcarpal3diap', 'mcarpal3dis', 'mcarpal3disdm', 'mcarpal3disdl', 'mcarpal3disdsr', 'mcarpal3dispm', 'mcarpal3displ', 'mcarpal3dispsr', 'medialaa', 'medialana', 'medialma', 'medialmna', 'medialba', 'medialbna', 'medialaxa', 'medialaxana'],
+                    value: ['...', 'Forelimbleg', 'Forelimbnorm', 'distalradius', 'distalradiusdm', 'distalradiusdl', 'distalradiusp', 'radiocarpal', 'radiocarpalpm', 'radiocarpalpl', 'radiocarpaldm', 'radiocarpaldl', 'mcarpal3', 'mcarpal3p', 'mcarpal3pd', 'mcarpal3pp', 'mcarpal3dia', 'mcarpal3diad', 'mcarpal3diap', 'mcarpal3dis', 'mcarpal3disdm', 'mcarpal3disdl', 'mcarpal3disdsr', 'mcarpal3dispm', 'mcarpal3displ', 'mcarpal3dispsr', 'medialaa', 'medialana', 'medialma', 'medialmna', 'medialba', 'medialbna', 'medialaxa', 'medialaxana']
                 }
             },
             'value': {
