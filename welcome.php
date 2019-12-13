@@ -11,7 +11,7 @@
 			// Connects to SQL database
 			$host = 'localhost'; //enter hostname
 			$userName = 'root'; //enter user name of DB
-			$Pass = ''; //enter password
+			$Pass = 'pwd'; //enter password
 			$DB = 'equine'; //Enter database name
 			$mysqli = mysqli_connect($host, $userName,$Pass,$DB);
 

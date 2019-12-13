@@ -69,7 +69,7 @@
 $host = "localhost";
 $dbname= "equine";
 $username  = "root";
-$password = "";
+$password = "pwd";
 
 $mysqli = mysqli_connect($host, $username, $password, $dbname);
 $i = 1;

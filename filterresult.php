@@ -28,7 +28,7 @@
 $host = "localhost";
 $dbname= "equine";
 $username  = "root";
-$password = "";
+$password = "pwd";
 $conn = mysqli_connect($host, $username, $password, $dbname);
 function printTable($query, $table_headers = NULL)
 {
