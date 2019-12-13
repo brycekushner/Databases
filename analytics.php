@@ -12,7 +12,7 @@
         if(!$mysqli){
             echo "Dead Connection: ".mysqli_connect_error();
         }else{
-            $first_histogram = 
+            $first_histogram = ;
         }
     ?>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
