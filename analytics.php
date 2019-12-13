@@ -3,17 +3,17 @@
     <body>
     <?php
         // Connects to SQL Database
-        $host = 'localhost';
-        $userName = 'root';
-        $password = 'pwd';
-        $DB = 'equine';
-        $mysqli = mysqli_connect($host, $userName, $password, $DB);
+        // $host = 'localhost';
+        // $userName = 'root';
+        // $password = 'pwd';
+        // $DB = 'equine';
+        // $mysqli = mysqli_connect($host, $userName, $password, $DB);
 
-        if(!$mysqli){
-            echo "Dead Connection: ".mysqli_connect_error();
-        }else{
-            $first_histogram = ;
-        }
+        // if(!$mysqli){
+        //     echo "Dead Connection: ".mysqli_connect_error();
+        // }else{
+        //     $first_histogram = ;
+        // }
     ?>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
