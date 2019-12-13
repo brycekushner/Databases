@@ -60,7 +60,7 @@
 	<div class="container">
 	<h3>Forelimb Pathology Form</h3>
 	<form action="results.php" method="post">
-		<label>Horse's Name: </label>
+		<label>Doctor's Name: </label>
 		<input type="text" name="horse_name_forelimb"><br>
 		<label>Date of Euthanasia or Antemortem Coputed Tomography (CT) Study: </label>
 		<input type="date" name="euthanasia_date_forelimb"><br>
@@ -475,7 +475,7 @@
 	<div class="container">
  	<h3>Hindlimb Pathology Form</h3>
 	<form action="results.php" method="post">
-		<label>Horse's name: </label>
+		<label>Doctor's name: </label>
 		<input type="text" name="horse_name_hindlimb"><br>
 		<label>Date of Euthanasia or Antemortem Coputed Tomography (CT) Study: </label>
 		<input type="date" name="euthanasia_date_hindlimb"><br>
