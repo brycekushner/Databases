@@ -836,7 +836,7 @@
 			<!-- End Medial Sesamoid -->
 		</div> <!-- /container -->
 
-		<input type="submit" value="Submit" name="submit_forelimb">
+		<input type="submit" value="Submit" name="submit_hindlimb">
 	</form>
 	<!-- END HINDLIMB FORM -->
 </div>
